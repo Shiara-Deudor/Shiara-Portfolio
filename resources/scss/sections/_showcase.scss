@@ -1,0 +1,99 @@
+.s-showcase {
+    @apply relative w-full max-h-full h-[110vh];
+
+    @screen md {
+        @apply h-[160vh];
+    }
+
+    @screen lg {
+        @apply h-[140vh];
+    }
+
+    &__opacity {
+        @apply absolute inset-0 bg-[#EDF3FB] h-[100vh];
+
+        @screen lg {
+            @apply h-[54vh];
+        }
+    }
+
+    &__banner {
+        @apply inset-0 flex flex-col justify-center gap-[4rem];
+    }
+
+    &__top {
+        @apply flex flex-col mt-14 justify-between w-full gap-10;
+
+        @screen lg {
+            @apply flex-row mt-44 gap-28;
+        }
+
+        &-left {
+            @apply flex flex-col justify-between w-full;
+        
+            h1 {
+                @apply text-[3rem] text-[#3A4163] w-full tracking-wider font-bold uppercase mt-8;
+
+                @screen lg {
+                    @apply text-[4rem] mt-16;
+                }
+            }
+
+            p {
+                @apply text-base mt-5 w-full hyphens-auto break-normal text-justify;
+            
+                @screen lg {
+                    @apply text-lg;
+                }
+            }
+
+            &-icons {
+                @apply flex flex-row gap-4 opacity-70 cursor-pointer;
+            
+                @screen lg {
+                    @apply gap-6;
+                }
+
+                img {
+                    @apply size-8;
+                
+                    @screen lg {
+                        @apply size-10;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            @apply flex flex-col justify-between w-full gap-2 items-center;
+    
+            img {
+                @apply object-cover size-[25rem];
+            }
+
+            button {
+                @apply bg-[#CBE3EF] text-[#3A4163] font-bold tracking-wide p-4 mt-4 rounded-lg text-center w-full;
+            }
+        }
+    }
+
+    &__bottom {
+        @apply hidden;
+
+        @screen lg {
+            @apply flex flex-row justify-between gap-4;
+        }
+
+        &-box {
+            @apply box-content opacity-60 rounded-lg bg-[#5AA8D6] h-40 w-[16rem] text-center content-center;
+
+            h2 {
+                @apply text-white text-lg;
+            }
+
+            p {
+                @apply text-[#F1F7F9] opacity-90 text-sm;
+            }
+        }
+    }
+}

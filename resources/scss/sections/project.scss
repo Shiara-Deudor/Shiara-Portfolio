@@ -1,0 +1,50 @@
+.s-project{
+    @apply relative w-full max-h-full h-[150vh] justify-center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('/assets/images/background.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    &__banner {
+        @apply flex flex-col justify-between items-center gap-14 ;
+
+        h1 {
+            @apply text-[3rem] text-[#3A4163] font-bold tracking-wider uppercase;
+        }
+
+        &-container {
+            @apply  m-auto shadow-md relative grid items-center overflow-hidden box-content bg-[#F1F7F9] bg-opacity-50 rounded-xl p-4 gap-16;
+
+            &--box {
+                @apply relative grid grid-cols-3 gap-12 p-6;
+
+                .project-card {
+                    @apply flex flex-col gap-6 items-center text-center border-2 border-[#CBE3EF] shadow-md p-4;
+
+                    img {
+                        @apply size-[5rem] mt-2;
+                    }
+
+                    h2 {
+                        @apply text-[1.25rem] font-bold text-[#749DC8] flex items-center tracking-wider;
+                    }
+
+                    p {
+                        @apply text-[#3A4163];
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.s-experience {
+    @apply relative w-full max-h-full h-[100vh] flex justify-center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('/assets/images/bottom-bg.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    &__banner {
+        @apply flex flex-col justify-center gap-10 items-center;
+        z-index: 1;
+
+        @screen lg {
+            @apply gap-16;
+        }
+
+        h1 {
+            @apply text-[3rem] text-[#3A4163] font-bold tracking-wider uppercase;
+        }
+
+        &-container {
+            @apply flex flex-row gap-9;
+
+            h2 {
+                @apply text-[2.5rem] font-bold text-[#749DC8] flex items-center;
+            
+                @screen lg {
+                    @apply tracking-widest;
+                }
+            }
+
+            .slider {
+                @apply h-[110px] m-auto relative grid items-center overflow-hidden box-content shadow-md border-2 border-[#CBE3EF] rounded-lg w-[8rem] p-4 gap-16;
+
+                @screen md {  
+                    @apply w-[30rem];
+                }
+            
+                @screen lg {
+                    @apply w-[50rem];
+                }
+
+                .frontend {
+                    animation: slide-left 40s linear infinite;
+
+                    @keyframes slide-left {
+                        0% {
+                            transform: translateX(0);
+                        }
+
+                        100% {
+                            transform: translateX(calc(-150px * 5));
+                        }
+                    }
+                }
+
+                .backend {
+                    animation: slide-right 40s linear infinite;
+
+                    @keyframes slide-right {
+                        0% {
+                            transform: translateX(calc(-150px * 5));
+                        }
+                        100% {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+
+                .slide-track {
+                    @apply flex gap-20;
+                
+                    @screen lg {
+                        @apply gap-28;
+                    }
+
+                    img {
+                        @apply w-[8%];
+                        transition: transform 1s;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    .slide {
+                        @apply flex items-center;
+                    }
+                }
+            }
+        }
+    }
+}

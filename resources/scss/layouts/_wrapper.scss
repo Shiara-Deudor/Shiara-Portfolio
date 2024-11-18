@@ -1,0 +1,31 @@
+.l-wrapper {
+    @apply relative w-full mx-auto;
+    
+    &--fluid {
+        @apply mx-auto px-10 md:px-[4rem] xl:px-[7rem] max-w-[110rem];
+    }
+
+    &--padded-y {
+        @apply py-6 md:py-14;
+    }
+
+    &--flex-row {
+        @apply flex flex-wrap justify-center;
+    }
+    
+    &--one-col {
+        @apply grid grid-cols-1 gap-3;
+    }
+
+    &--three-col {
+        @apply grid grid-cols-1 lg:grid-cols-3 gap-3 justify-items-center;
+    }
+
+    &--flex-row-lg {
+        @apply flex flex-col lg:flex-row gap-4;
+    }
+
+    &--centered {
+        @apply text-center items-center;
+    }
+}

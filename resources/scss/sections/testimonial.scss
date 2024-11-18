@@ -1,0 +1,76 @@
+.s-testimonial{
+    @apply relative w-full max-h-full h-[100vh] justify-center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('/assets/images/top-bg.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    &__banner {
+        @apply flex flex-col justify-between items-center gap-14;
+
+        h1 {
+            @apply text-[3rem] text-[#3A4163] font-bold tracking-wider uppercase;
+        }
+
+        &-container {
+            @apply flex flex-row gap-9;
+
+            .slider {
+                @apply w-[54rem] h-[25rem] shadow-md m-auto relative grid items-center overflow-hidden box-content bg-[#F1F7F9] bg-opacity-50 border-4 border-[#CBE3EF] rounded-lg p-6 gap-16;
+
+                .slideshow {
+                    animation: slide-left 30s linear 3s infinite;
+
+                    &:hover {
+                        animation-play-state: paused;
+                    }
+
+                    @keyframes slide-left {
+                        0% {
+                            transform: translateX(0);
+                        }
+
+                        100% {
+                            transform: translateX(calc(-100%));
+                        }
+                    }
+                }
+
+                .slide-track {
+                    @apply flex flex-row gap-16;
+
+                    .slide {
+                        @apply flex flex-col gap-4 items-center text-center w-[25rem] overflow-hidden;
+
+                        h2 {
+                            @apply text-[1.7rem] font-bold text-[#5AA8D6] flex items-center tracking-wider;
+                        }
+
+                        span {
+                            @apply text-[#749DC8];
+                        }
+
+                        img {
+                            @apply size-[4.5rem] rounded-full shadow-md;
+                        }
+
+                        p {
+                            @apply text-[#3A4163] text-[0.95rem];
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

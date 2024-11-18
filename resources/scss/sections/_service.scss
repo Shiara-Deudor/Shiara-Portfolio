@@ -1,0 +1,47 @@
+.s-service {
+    @apply relative w-full max-h-full h-[100vh] flex justify-center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('/assets/images/top-bg.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    &__banner {
+        @apply flex flex-row gap-20 items-center justify-between;
+
+        &-container {
+            @apply relative;
+
+            &--top {
+                @apply bg-[#CBE3EF] text-center rounded-2xl px-4 py-6 z-10 absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full;
+
+                h2 {
+                    @apply text-[#3A4163] font-bold text-[1.15rem];
+                }
+            }
+
+            &--bottom {
+                @apply bg-[#F1F7F9] bg-opacity-70 border-8 border-[#CBE3EF] opacity-80 p-6 rounded-3xl;
+
+                p {
+                    @apply mt-7 text-[#3A4163] hyphens-auto break-normal text-justify;
+                }
+            }
+        }
+
+        h1 {
+            @apply text-[3rem] text-[#3A4163] font-bold tracking-widest uppercase [writing-mode:vertical-rl] [transform:rotate(180deg)];
+        }
+       
+    }
+}
